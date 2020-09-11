@@ -1,2 +1,1 @@
-# canary_deployment
-Canary Deployment for K8s
+# Canary Deployment for K8s
