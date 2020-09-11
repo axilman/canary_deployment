@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: kubeapp
-        image: PROJECT_ID-app:1.0
+        image: canary-app:1.0
         imagePullPolicy: IfNotPresent
         readinessProbe:
           httpGet:
