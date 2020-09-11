@@ -6,11 +6,7 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-<<<<<<< HEAD
       app: kubeapp  
-=======
-      app: hello-world  
->>>>>>> 8e2d1377b9d0dbb648cc61e182c22600dca44126
   template:
     metadata:
       name: kubeapp
