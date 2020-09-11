@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubeapp-canary
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kubeapp
+  template:
+    metadata:
+      name: kubeapp
+      labels:
+        app: kubeapp
+        env: canary
+    spec:
+      containers:
+      - name: kubeapp
+        image: PROJECT_ID-app:2.0
+        imagePullPolicy: IfNotPresent
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+        command: ["/app"]
+        ports:
+        - name: kubeapp
+          containerPort: 8080
